@@ -15,8 +15,8 @@ public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
        
         stack<pair<TreeNode*,int>> st1,st2;
-        if(p==NULL && q==NULL) return true  ;
-        if(!p || !q) return false ;
+        
+        
         st1.push({p,0});
         st2.push({q,0});
         while(!st1.empty() && !st2.empty()){
@@ -33,7 +33,7 @@ public:
             if(!node1 && !node2)continue;
             if(!node1 || !node2) return false;
             
-            if(node1->val!=node2->val ||dir1!=dir2 ) return false;
+            if(node1->val!=node2->val ) return false;
             
             
             st1.push({node1->right,2});
